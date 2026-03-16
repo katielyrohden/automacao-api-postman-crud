@@ -5,19 +5,30 @@ Este repositório contém um projeto prático de automação de testes de Backen
 
 Como profissional com experiência consolidada em testes manuais e liderança de QA, este projeto reflete minha transição para o stack de automação, garantindo que a lógica de teste seja aplicada de forma eficiente e escalável.
 
-## Tecnologias e Ferramentas Utilizadas
-* **Postman:** Criação e organização da suíte de testes (Collections).
-* **JavaScript (Scripts de Automação):** Scripts na aba "Tests" para validação e captura de variáveis.
-* **JSONPlaceholder API:** Endpoint público utilizado para simulação de ambiente real.
-* **GitHub:** Documentação e versionamento do projeto.
+## 🛠️ Tecnologias e Ferramentas Utilizadas
+* **Postman:** Para testes manuais, exploratórios e automação de requisições.
+* **JavaScript (Postman Scripts):** Para captura de respostas (JSON) e criação de variáveis dinâmicas.
+* **APIs REST:** Validação de verbos HTTP e arquitetura.
+* **SQL (Simulação mental/validação):** Estruturação de consultas (`SELECT`, `WHERE`) para auditoria de banco de dados.
+* **Swagger/Documentação:** Leitura e mapeamento de endpoints e contratos de API.
 
-## Cenários de Teste Executados
-A coleção valida as quatro operações principais (CRUD):
-1. **POST - Criar Usuário e Capturar ID:** Valida a criação (201) e automatiza a captura do ID para os testes seguintes.
-2. **GET - Consultar Usuário por ID:** Valida se o retorno é 200 OK para um ID existente.
-3. **PUT - Atualizar Dados:** Simula a alteração de informações do usuário.
-4. **DELETE - Excluir Usuário:** Valida a remoção do registro.
-5. **GET - Validar Erro 404:** Testa a resiliência da API ao buscar um recurso inexistente.
+## 🧪 Cenários de Teste Executados (CRUD Completo)
+A coleção do Postman neste repositório cobre os seguintes cenários:
+
+1. **Criação (POST):** Cadastro de novos clientes e produtos.
+   * *Validação:* Status Code `201 Created` e confirmação do Payload (Body).
+2. **Leitura (GET):** Consulta de produtos específicos por ID.
+   * *Validação:* Status Code `200 OK`.
+3. **Atualização (PUT):** Alteração de preços e dados de clientes.
+   * *Validação:* Status Code `200 OK` e conferência da atualização.
+4. **Exclusão (DELETE):** Remoção de itens do catálogo.
+   * *Validação:* Status Code `204 No Content` ou `200 OK`.
+5. **Caminhos Tristes (Testes Negativos):** Busca por IDs inexistentes.
+   * *Validação:* Status Code `404 Not Found`.
+
+## 🤖 Automação Destacada
+Para otimizar a execução, este projeto utiliza **Variáveis de Ambiente e Globais**. 
+Através da aba *Tests* do Postman, o script captura dinamicamente o `id` gerado no método POST e guarda numa variável `{{meu_novo_id}}`, passando a informação automaticamente para os testes seguintes (PUT e DELETE), criando uma esteira de testes contínua e sem necessidade de intervenção manual.
 
 ## Sobre a Autora
 **Katiély Rohden**
