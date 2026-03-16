@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "da3881d7-857e-40d6-9616-065170754ef4",
+		"name": "API Testing - JSONPlaceholder (CRUD)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33697186"
+	},
+	"item": [
+		{
+			"name": "Validar Usuário Inexistente (404)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. O robô lê a resposta que voltou da cozinha no formato JSON\r",
+							"var resposta = pm.response.json();\r",
+							"\r",
+							"// 2. O robô pega o \"id\" e guarda num Post-it chamado \"meu_novo_id\"\r",
+							"pm.globals.set(\"meu_novo_id\", resposta.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Katiély Rohden - Especialista QA\",\r\n  \"company\": \"Alfajor Artesanal - Matriz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/999",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Usuário do Sistema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. O robô lê a resposta que voltou da cozinha no formato JSON\r",
+							"var resposta = pm.response.json();\r",
+							"\r",
+							"// 2. O robô pega o \"id\" e guarda num Post-it chamado \"meu_novo_id\"\r",
+							"pm.globals.set(\"meu_novo_id\", resposta.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Katiély Rohden - Especialista QA\",\r\n  \"company\": \"Alfajor Artesanal - Matriz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Dados do Usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. O robô lê a resposta que voltou da cozinha no formato JSON\r",
+							"var resposta = pm.response.json();\r",
+							"\r",
+							"// 2. O robô pega o \"id\" e guarda num Post-it chamado \"meu_novo_id\"\r",
+							"pm.globals.set(\"meu_novo_id\", resposta.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Katiély Rohden - Especialista QA\",\r\n  \"company\": \"Alfajor Artesanal - Matriz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Usuário e Capturar ID (Automação)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. O robô lê a resposta que voltou da cozinha no formato JSON\r",
+							"var resposta = pm.response.json();\r",
+							"\r",
+							"// 2. O robô pega o \"id\" e guarda num Post-it chamado \"meu_novo_id\"\r",
+							"pm.globals.set(\"meu_novo_id\", resposta.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Katiély Rohden\",\r\n  \"company\": \"Alfajor Artesanal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Novo Usuário (Caminho Feliz)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Katiély Rohden\",\r\n  \"company\": \"Alfajor Artesanal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Usuário por ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/2",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
