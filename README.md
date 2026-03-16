@@ -1,31 +1,23 @@
-# Automação e Validação de API REST: E-commerce Alfajor Artesanal
+# Automação de Testes de API REST: JSONPlaceholder (CRUD Completo)
 
 ## Sobre o Projeto
-Este repositório apresenta um projeto prático de testes de Backend (End-to-End) simulando o fluxo de um sistema de e-commerce. Como profissional com sólida experiência em testes manuais e liderança de equipes de QA, este projeto marca a minha consolidação técnica na automação de processos para garantir entregas mais robustas e eficientes.
+Este repositório contém um projeto prático de automação de testes de Backend utilizando a API pública **JSONPlaceholder**. O objetivo é demonstrar a validação do ciclo de vida completo de um recurso (usuários), aplicando técnicas de verificação de Status Codes, contratos de resposta e automação de fluxos dinâmicos.
+
+Como profissional com experiência consolidada em testes manuais e liderança de QA, este projeto reflete minha transição para o stack de automação, garantindo que a lógica de teste seja aplicada de forma eficiente e escalável.
 
 ## Tecnologias e Ferramentas Utilizadas
-* **Postman:** Ferramenta principal para criação de coleções e execução de testes.
-* **JavaScript (Scripts de Automação):** Utilizado para captura de respostas JSON e manipulação de variáveis globais.
-* **APIs REST:** Validação de verbos HTTP e conformidade de contratos.
-* **SQL (Conhecimento Lógico):** Estruturação de consultas para auditoria e integridade de dados no banco de dados.
-* **GitHub:** Versionamento de artefatos de teste e documentação técnica.
+* **Postman:** Criação e organização da suíte de testes (Collections).
+* **JavaScript (Scripts de Automação):** Scripts na aba "Tests" para validação e captura de variáveis.
+* **JSONPlaceholder API:** Endpoint público utilizado para simulação de ambiente real.
+* **GitHub:** Documentação e versionamento do projeto.
 
-## Cenários de Teste Executados (CRUD Completo)
-A coleção incluída neste projeto cobre o ciclo de vida completo de um recurso:
-
-1. **Criação (POST):** Cadastro de novos clientes e produtos.
-   * *Validação:* Status Code `201 Created` e análise do Payload de retorno.
-2. **Leitura (GET):** Consulta de dados específicos por ID.
-   * *Validação:* Status Code `200 OK`.
-3. **Atualização (PUT):** Alteração de informações em registros existentes.
-   * *Validação:* Status Code `200 OK` e confirmação da persistência dos dados.
-4. **Exclusão (DELETE):** Remoção de dados do sistema.
-   * *Validação:* Status Code `200 OK`.
-5. **Caminhos Tristes (Testes de Resiliência):** Busca por IDs inexistentes para validar o tratamento de erros.
-   * *Validação:* Status Code `404 Not Found`.
-
-## Diferencial Técnico: Automação de Fluxo
-Para otimizar a esteira de testes, utilizei scripts na aba **Post-res** (Tests) do Postman. O sistema captura automaticamente o `id` gerado no método POST e o armazena na variável `{{meu_novo_id}}`. Dessa forma, os testes de atualização (PUT) e exclusão (DELETE) são alimentados dinamicamente, eliminando a necessidade de intervenção manual entre as requisições.
+## Cenários de Teste Executados
+A coleção valida as quatro operações principais (CRUD):
+1. **POST - Criar Usuário e Capturar ID:** Valida a criação (201) e automatiza a captura do ID para os testes seguintes.
+2. **GET - Consultar Usuário por ID:** Valida se o retorno é 200 OK para um ID existente.
+3. **PUT - Atualizar Dados:** Simula a alteração de informações do usuário.
+4. **DELETE - Excluir Usuário:** Valida a remoção do registro.
+5. **GET - Validar Erro 404:** Testa a resiliência da API ao buscar um recurso inexistente.
 
 ## Sobre a Autora
 **Katiély Rohden**
